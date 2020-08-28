@@ -4,3 +4,21 @@ import pandas as pd
 presidents_df = pd.read_csv('https://sololearn.com/uploads/files/president_heights_party.csv', index_col='name')
 
 print(presidents_df.head())
+
+#Single Indexing
+presidents_df.loc['Abraham Lincoln']
+
+#Multiple Indexing
+presidents_df.loc['John Tyler':'Abraham Lincoln']
+presidents_df.iloc[5:15] #John Quincy Adams till James Buchanan
+
+#shape
+presidents_df['height'].shape
+
+#Min Max Values for all Attributes (columns)
+presidents_df.min()
+presidents_df.max()
+
+#mean and median
+presidents_df.mean()
+presidents_df.median()
