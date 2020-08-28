@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 presidents_df = pd.read_csv('https://sololearn.com/uploads/files/president_heights_party.csv', index_col='name')
 
@@ -22,3 +23,16 @@ presidents_df.max()
 #mean and median
 presidents_df.mean()
 presidents_df.median()
+
+#Quartiles for Age
+age_quartiles = presidents_df['age'].quantile([0.25,0.5,0.75,1])
+age_quartiles = np.array(age_quartiles)
+print(age_quartiles)
+
+presidents_names = presidents_df['order']
+print(presidents_names)
+#Plot Age
+fig = plt.figure()
+ax1 = fig.add_subplot(111)
+ax1.plot(presidents_df['order'], presidents_df['age'])
+plt.show()
